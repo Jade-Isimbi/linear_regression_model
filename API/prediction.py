@@ -26,7 +26,7 @@ class PredictionRequest(BaseModel):
     region: str
 
 # Load the model 
-model = joblib.load('/Users/jade/ML_summative/summative/linear_regression/best_model.pkl')
+model = joblib.load('../summative/linear_regression/best_model.pkl')
 
 @app.post('/predict')
 def predict(request: PredictionRequest):
