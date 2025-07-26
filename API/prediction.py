@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import joblib
+import pickle
 import numpy as np
 import uvicorn
 
@@ -24,9 +24,12 @@ class PredictionRequest(BaseModel):
     sex: str
     smoker: str
     region: str
+    
 
-# Load the model 
-model = joblib.load('../summative/linear_regression/best_model.pkl')
+# Load the model from disk
+with open('./summative/linear_regression/best_model.pkl', 'rb') as f:
+    loaded_rf_model = pickle.load(f)
+print("Model loaded successfully!")
 
 @app.post('/predict')
 def predict(request: PredictionRequest):
@@ -43,6 +46,6 @@ def predict(request: PredictionRequest):
         
     ]
     X = np.array(features).reshape(1, -1)
-    prediction = model.predict(X)
+    prediction = loaded_rf_model.predict(X)
     return {"prediction": prediction.tolist()}
 
