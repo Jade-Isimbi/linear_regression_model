@@ -4,7 +4,7 @@
 
 My mission is to improve access to quality healthcare in Rwanda by leveraging technology-driven solutions. The sector faces critical challenges, including a shortage of doctors and limited resources, leading to long wait times and inefficiencies. Through innovative digital platforms, I aim to bridge gaps between patients, healthcare providers, and services.
 
-## Public API Endpoint
+## API 
 
 **Swagger UI Documentation:** `https://mlsummative-production.up.railway.app/docs`
 
@@ -16,7 +16,7 @@ My mission is to improve access to quality healthcare in Rwanda by leveraging te
 
 ## Video Demo
 
-**YouTube Link:** 
+**YouTube Link:** `https://youtu.be/_l5rSSywX9g`
 
 *The video shows how:*
 - Model performance comparison (Linear Regression vs Decision Tree vs Random Forest)
